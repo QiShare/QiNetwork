@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE352B5A2265D4DA008E55C1 /* QiCookieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE352B592265D4DA008E55C1 /* QiCookieViewController.m */; };
+		EE6A18BE2258B096001774C1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6A18BD2258B096001774C1 /* AppDelegate.m */; };
+		EE6A18C42258B096001774C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6A18C22258B096001774C1 /* Main.storyboard */; };
+		EE6A18C62258B098001774C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE6A18C52258B098001774C1 /* Assets.xcassets */; };
+		EE6A18C92258B098001774C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6A18C72258B098001774C1 /* LaunchScreen.storyboard */; };
+		EE6A18CC2258B098001774C1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6A18CB2258B098001774C1 /* main.m */; };
+		F9C286D01C0F726AA80C345C /* libPods-QiNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2089A3770170F8018146B04 /* libPods-QiNetwork.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		360B484318BA5473320144AF /* Pods-QiNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiNetwork/Pods-QiNetwork.debug.xcconfig"; sourceTree = "<group>"; };
+		674D7888294438AE438678E2 /* Pods-QiNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-QiNetwork/Pods-QiNetwork.release.xcconfig"; sourceTree = "<group>"; };
+		A2089A3770170F8018146B04 /* libPods-QiNetwork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QiNetwork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE352B582265D4DA008E55C1 /* QiCookieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiCookieViewController.h; sourceTree = "<group>"; };
+		EE352B592265D4DA008E55C1 /* QiCookieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiCookieViewController.m; sourceTree = "<group>"; };
+		EE6A18B92258B096001774C1 /* QiNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE6A18BC2258B096001774C1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EE6A18BD2258B096001774C1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EE6A18C32258B096001774C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EE6A18C52258B098001774C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EE6A18C82258B098001774C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EE6A18CA2258B098001774C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE6A18CB2258B098001774C1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EE6A18B62258B096001774C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9C286D01C0F726AA80C345C /* libPods-QiNetwork.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04D3FE5967137F50348EDF8B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				360B484318BA5473320144AF /* Pods-QiNetwork.debug.xcconfig */,
+				674D7888294438AE438678E2 /* Pods-QiNetwork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9509082759A06445D22BC02C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2089A3770170F8018146B04 /* libPods-QiNetwork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE6A18B02258B096001774C1 = {
+			isa = PBXGroup;
+			children = (
+				EE6A18BB2258B096001774C1 /* QiNetwork */,
+				EE6A18BA2258B096001774C1 /* Products */,
+				04D3FE5967137F50348EDF8B /* Pods */,
+				9509082759A06445D22BC02C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EE6A18BA2258B096001774C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EE6A18B92258B096001774C1 /* QiNetwork.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EE6A18BB2258B096001774C1 /* QiNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				EE6A18BC2258B096001774C1 /* AppDelegate.h */,
+				EE6A18BD2258B096001774C1 /* AppDelegate.m */,
+				EE352B582265D4DA008E55C1 /* QiCookieViewController.h */,
+				EE352B592265D4DA008E55C1 /* QiCookieViewController.m */,
+				EE6A18C22258B096001774C1 /* Main.storyboard */,
+				EE6A18C52258B098001774C1 /* Assets.xcassets */,
+				EE6A18C72258B098001774C1 /* LaunchScreen.storyboard */,
+				EE6A18CA2258B098001774C1 /* Info.plist */,
+				EE6A18CB2258B098001774C1 /* main.m */,
+			);
+			path = QiNetwork;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE6A18B82258B096001774C1 /* QiNetwork */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE6A18CF2258B098001774C1 /* Build configuration list for PBXNativeTarget "QiNetwork" */;
+			buildPhases = (
+				C81065990924DF03F73469F7 /* [CP] Check Pods Manifest.lock */,
+				EE6A18B52258B096001774C1 /* Sources */,
+				EE6A18B62258B096001774C1 /* Frameworks */,
+				EE6A18B72258B096001774C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QiNetwork;
+			productName = QiNetwork;
+			productReference = EE6A18B92258B096001774C1 /* QiNetwork.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE6A18B12258B096001774C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = QiShare;
+				TargetAttributes = {
+					EE6A18B82258B096001774C1 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = EE6A18B42258B096001774C1 /* Build configuration list for PBXProject "QiNetwork" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE6A18B02258B096001774C1;
+			productRefGroup = EE6A18BA2258B096001774C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE6A18B82258B096001774C1 /* QiNetwork */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EE6A18B72258B096001774C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE6A18C92258B098001774C1 /* LaunchScreen.storyboard in Resources */,
+				EE6A18C62258B098001774C1 /* Assets.xcassets in Resources */,
+				EE6A18C42258B096001774C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C81065990924DF03F73469F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QiNetwork-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EE6A18B52258B096001774C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE6A18CC2258B098001774C1 /* main.m in Sources */,
+				EE352B5A2265D4DA008E55C1 /* QiCookieViewController.m in Sources */,
+				EE6A18BE2258B096001774C1 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EE6A18C22258B096001774C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE6A18C32258B096001774C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EE6A18C72258B098001774C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE6A18C82258B098001774C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EE6A18CD2258B098001774C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EE6A18CE2258B098001774C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EE6A18D02258B098001774C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 360B484318BA5473320144AF /* Pods-QiNetwork.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
+				INFOPLIST_FILE = QiNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QiNetwork",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.wyw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EE6A18D12258B098001774C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674D7888294438AE438678E2 /* Pods-QiNetwork.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
+				INFOPLIST_FILE = QiNetwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/QiNetwork",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.wyw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EE6A18B42258B096001774C1 /* Build configuration list for PBXProject "QiNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6A18CD2258B098001774C1 /* Debug */,
+				EE6A18CE2258B098001774C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EE6A18CF2258B098001774C1 /* Build configuration list for PBXNativeTarget "QiNetwork" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE6A18D02258B098001774C1 /* Debug */,
+				EE6A18D12258B098001774C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EE6A18B12258B096001774C1 /* Project object */;
+}
