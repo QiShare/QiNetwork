@@ -15,6 +15,9 @@
 #import <AFHTTPSessionManager.h>
 #import <WebKit/WebKit.h>
 
+static NSString *const kJianshuDomain = @".jianshu.com";
+static NSString *const kJuejinDomain = @".juejin.im";
+
 @interface QiCookieViewController ()<WKNavigationDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
@@ -53,15 +56,17 @@
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.userContentController = userContentController;
     
-    NSURL *url1 = [NSURL URLWithString:@"https://www.jianshu.com"];
-    url1 = [NSURL URLWithString:@"https://juejin.im"];
-    NSMutableURLRequest *mRequest1 = [[NSMutableURLRequest alloc] initWithURL:url1];
+    NSURL *juejinUrl = [NSURL URLWithString:@"https://www.jianshu.com"];
+    juejinUrl = [NSURL URLWithString:@"https://juejin.im"];
+    NSMutableURLRequest *mJuejinRequest = [[NSMutableURLRequest alloc] initWithURL:juejinUrl];
+    [mJuejinRequest addValue:@"QiShareAuth1=QiShareAuth1;QiShareAuth2=QiShareAuth2" forHTTPHeaderField:@"Cookie"];
     WKWebView *wkWebV  = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-    [_wkWebView loadRequest:mRequest1];
+    _wkWebView = wkWebV;
+    
+    [_wkWebView loadRequest:mJuejinRequest];
+    wkWebV.navigationDelegate = self;
     
     [self.view addSubview:wkWebV];
-    _wkWebView = wkWebV;
-    wkWebV.navigationDelegate = self;
     
     UIWebView *webV = [[UIWebView alloc] init];
     webV.frame = self.view.bounds;
@@ -179,44 +184,27 @@
 - (void)webViewInjectCookie {
     
     NSURL *url = [NSURL URLWithString:@"https://www.jianshu.com"];
+    url = [NSURL URLWithString:@"https://www.jianshu.com/p/1174d1dbe650"];
+    [self setCookieWithName:@"local" cookieValue:@"zh-TW" cookiePath:@"/" cookieDomain:kJianshuDomain];
+    [self setCookieWithName:@"QiShareToken" cookieValue:@"QiShareTokenValue" cookiePath:@"/" cookieDomain:kJianshuDomain];
+    [self setCookieWithName:@"QiShareKey" cookieValue:@"QiShareValue" cookiePath:@"/" cookieDomain:kJianshuDomain];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    
-    NSDictionary *keyProperties = @{
-                                    NSHTTPCookieName: @"QiShareKey",
-                                    NSHTTPCookieValue: @"QiShareValue",
-                                    NSHTTPCookiePath: @"/",
-                                    NSHTTPCookieDomain: @".jianshu.com"
-                                    };
-    NSArray <NSHTTPCookie *>*cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    
-    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:keyProperties];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
-    
-    NSDictionary *tokenProperties = @{
-                                      NSHTTPCookieName: @"QiShareToken",
-                                      NSHTTPCookieValue: @"QiShareTokenValue",
-                                      NSHTTPCookiePath: @"/",
-                                      NSHTTPCookieDomain: @".jianshu.com"
-                                      };
-    NSHTTPCookie *tokenCookie = [NSHTTPCookie cookieWithProperties:tokenProperties];
-    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:tokenCookie];
-    
-    cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
-    [_webView loadRequest:request];
-    
-    return;
-    
-    NSString *cookie1 = [[NSString alloc] initWithFormat:@"cookieName1=cookieValue1;path=/;domain=jianshu.com;"];
-    NSString *cookie2 = [[NSString alloc] initWithFormat:@"cookieName2=cookieValue2;path=/;domain=jianshu.com;"];
-    NSArray *cookiesStrArr = @[cookie1, cookie2];
-    for (NSString *cookieStr in cookiesStrArr) {
-        NSDictionary *cookieDict = @{@"Set-Cookie": cookieStr};
-        NSArray *cookies = [NSHTTPCookie cookiesWithResponseHeaderFields:cookieDict forURL:url];
-        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:cookies forURL:url mainDocumentURL:nil];
-    }
-    
     [_webView loadRequest:request];
 }
+
+//! 系统网络请求携带Cookie
+- (void)systemRequestTakeCookie2 {
+    
+    NSURL *url = [NSURL URLWithString:@"https://www.jianshu.com"];
+    NSMutableURLRequest *mRequest = [NSMutableURLRequest requestWithURL:url];
+    mRequest.HTTPMethod = @"GET";
+    [mRequest setValue:@"QiShareName=QiShareValue;QiShareToken=QiShareTokenValue" forHTTPHeaderField:@"cookie"];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:mRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    }];
+    [dataTask resume];
+}
+
 
 //! 系统网络请求携带Cookie
 - (void)systemRequestTakeCookie {
@@ -238,6 +226,18 @@
         }
     }];
     [dataTask resume];
+}
+
+//! AFN请求携带Cookie
+- (void)AFNRequestTakeCookie2 {
+    
+    NSString *urlString = @"https://juejin.im";
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"QiShareNameAFN=QiShareValueAFN;QiShareTokenAFN=QiShareTokenValueAFN" forHTTPHeaderField:@"cookie"];
+    [sessionManager GET:urlString parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
 }
 
 //! AFN请求携带Cookie
@@ -269,6 +269,62 @@
         [webView loadRequest:navigationAction.request];
     }
     decisionHandler(WKNavigationActionPolicyAllow);
+}
+
+//! 生成指定cookieName cookieValue cookiePath cookieDomain 的NSHTTPCookie 实例
+- (NSHTTPCookie *)cookieWithName:(NSString *)name cookieValue:(NSString *)value  cookiePath:(NSString *)path cookieDomain:(NSString *)domain {
+    
+    NSDictionary *keyProperties = @{
+                                    NSHTTPCookieName: name,
+                                    NSHTTPCookieValue: value,
+                                    NSHTTPCookiePath: path,
+                                    NSHTTPCookieDomain: domain
+                                    };
+    
+    NSHTTPCookie *cookie = [NSHTTPCookie cookieWithProperties:keyProperties];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    return cookie;
+}
+
+//! 设置 （生成指定cookieName cookieValue cookiePath cookieDomain 的NSHTTPCookie 实例） 到NSHTTPCookieStorage
+- (NSHTTPCookie *)setCookieWithName:(NSString *)name cookieValue:(NSString *)value  cookiePath:(NSString *)path cookieDomain:(NSString *)domain {
+    
+    if (!name || !value || !path || !domain) {
+        return nil;
+    }
+    NSHTTPCookie *cookie = [self cookieWithName:name cookieValue:value cookiePath:path cookieDomain:domain];
+    [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    
+    return cookie;
+}
+
+
+- (void)others {
+    
+    // _wkWebView.configuration.websiteDataStore.httpCookieStore 的方式并没有生效
+    /** // Xcode10.1 iPhone XR 模拟器测试无效
+     if (@available(iOS 11.0, *)) {
+     WKHTTPCookieStore *wkCookieStore = _wkWebView.configuration.websiteDataStore.httpCookieStore;
+     [wkCookieStore setCookie:[self cookieWithName:@"QiShareAuth1" cookieValue:@"QiShareAuth1" cookiePath:@"/" cookieDomain:kJuejinDomain] completionHandler:^{
+     
+     }];
+     [wkCookieStore setCookie:[self cookieWithName:@"QiShareAuth2" cookieValue:@"QiShareAuth2" cookiePath:@"/" cookieDomain:kJuejinDomain] completionHandler:^{
+     
+     }];
+     } else {
+     // Fallback on earlier versions
+     }
+     */
+    
+    /** // 遍历Cookies
+     if (@available(iOS 11.0, *)) {
+     [_wkWebView.configuration.websiteDataStore.httpCookieStore getAllCookies:^(NSArray<NSHTTPCookie *> * _Nonnull cookiesArr) {
+     for (NSHTTPCookie *cookie in cookiesArr) {
+     NSLog(@"name：%@--value：%@", cookie.name, cookie.value);
+     }
+     }];
+     }
+     */
 }
 
 @end
